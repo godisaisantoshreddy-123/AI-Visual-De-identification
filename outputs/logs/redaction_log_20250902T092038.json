@@ -1,0 +1,216 @@
+[
+  {
+    "file": "Driving Licence.pdf",
+    "type": "pdf",
+    "page": 1,
+    "detections": [
+      {
+        "label": "CVV",
+        "box": [
+          546,
+          216,
+          36,
+          6
+        ],
+        "matched": "800"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          538,
+          226,
+          78,
+          6
+        ],
+        "matched": "104"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          148,
+          98,
+          184,
+          24
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "type": "FACE",
+        "box": [
+          541,
+          103,
+          58,
+          58
+        ]
+      },
+      {
+        "type": "SIGNATURE",
+        "box": [
+          489,
+          267,
+          56,
+          16
+        ]
+      },
+      {
+        "type": "SIGNATURE",
+        "box": [
+          563,
+          247,
+          66,
+          16
+        ]
+      },
+      {
+        "type": "SIGNATURE",
+        "box": [
+          504,
+          247,
+          57,
+          13
+        ]
+      }
+    ],
+    "redacted": [
+      {
+        "label": "CVV",
+        "box": [
+          546,
+          216,
+          36,
+          6
+        ],
+        "matched": "800"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          538,
+          226,
+          78,
+          6
+        ],
+        "matched": "104"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          148,
+          98,
+          184,
+          24
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "type": "FACE",
+        "box": [
+          541,
+          103,
+          58,
+          58
+        ]
+      },
+      {
+        "type": "SIGNATURE",
+        "box": [
+          489,
+          267,
+          56,
+          16
+        ]
+      },
+      {
+        "type": "SIGNATURE",
+        "box": [
+          563,
+          247,
+          66,
+          16
+        ]
+      },
+      {
+        "type": "SIGNATURE",
+        "box": [
+          504,
+          247,
+          57,
+          13
+        ]
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250902T092006"
+  },
+  {
+    "file": "Driving Licence.pdf",
+    "type": "pdf",
+    "page": 2,
+    "detections": [
+      {
+        "label": "CVV",
+        "box": [
+          16,
+          21,
+          247,
+          25
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          16,
+          21,
+          247,
+          25
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          16,
+          21,
+          247,
+          25
+        ],
+        "matched": "32720240003453"
+      }
+    ],
+    "redacted": [
+      {
+        "label": "CVV",
+        "box": [
+          16,
+          21,
+          247,
+          25
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          16,
+          21,
+          247,
+          25
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          16,
+          21,
+          247,
+          25
+        ],
+        "matched": "32720240003453"
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250902T092038"
+  }
+]

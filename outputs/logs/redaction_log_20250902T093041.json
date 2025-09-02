@@ -1,0 +1,93 @@
+[
+  {
+    "file": "Carlos_E_Rodriguez.pdf",
+    "type": "pdf",
+    "page": 1,
+    "detections": [
+      {
+        "label": "CVV",
+        "box": [
+          85,
+          725,
+          350,
+          44
+        ],
+        "matched": "786"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          85,
+          725,
+          350,
+          44
+        ],
+        "matched": "555"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          85,
+          725,
+          350,
+          44
+        ],
+        "matched": "312"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          83,
+          1907,
+          772,
+          44
+        ],
+        "matched": "1765092039"
+      }
+    ],
+    "redacted": [
+      {
+        "label": "CVV",
+        "box": [
+          85,
+          725,
+          350,
+          44
+        ],
+        "matched": "786"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          85,
+          725,
+          350,
+          44
+        ],
+        "matched": "555"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          85,
+          725,
+          350,
+          44
+        ],
+        "matched": "312"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          83,
+          1907,
+          772,
+          44
+        ],
+        "matched": "1765092039"
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250902T093041"
+  }
+]

@@ -1,0 +1,113 @@
+[
+  {
+    "file": "Carlos_E_Rodriguez.pdf",
+    "type": "pdf",
+    "page": 1,
+    "detections": [
+      {
+        "label": "CVV",
+        "box": [
+          64,
+          546,
+          262,
+          32
+        ],
+        "matched": "786"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          64,
+          546,
+          262,
+          32
+        ],
+        "matched": "555"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          64,
+          546,
+          262,
+          32
+        ],
+        "matched": "312"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          64,
+          958,
+          312,
+          30
+        ],
+        "matched": "199384710"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          63,
+          1427,
+          580,
+          38
+        ],
+        "matched": "1765092039"
+      }
+    ],
+    "redacted": [
+      {
+        "label": "CVV",
+        "box": [
+          64,
+          546,
+          262,
+          32
+        ],
+        "matched": "786"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          64,
+          546,
+          262,
+          32
+        ],
+        "matched": "555"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          64,
+          546,
+          262,
+          32
+        ],
+        "matched": "312"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          64,
+          958,
+          312,
+          30
+        ],
+        "matched": "199384710"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          63,
+          1427,
+          580,
+          38
+        ],
+        "matched": "1765092039"
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250902T094244"
+  }
+]

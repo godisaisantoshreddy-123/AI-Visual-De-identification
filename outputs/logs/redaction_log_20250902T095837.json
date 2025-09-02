@@ -1,0 +1,50 @@
+[
+  {
+    "file": "zvs17e00.png",
+    "type": "image",
+    "detections": [
+      {
+        "label": "CVV",
+        "box": [
+          1375,
+          2611,
+          299,
+          57
+        ],
+        "matched": "1\u0966\u0966"
+      },
+      {
+        "type": "FACE",
+        "box": [
+          1366,
+          2420,
+          58,
+          58
+        ]
+      }
+    ],
+    "redacted": [
+      {
+        "label": "CVV",
+        "box": [
+          1375,
+          2611,
+          299,
+          57
+        ],
+        "matched": "1\u0966\u0966"
+      },
+      {
+        "type": "FACE",
+        "box": [
+          1366,
+          2420,
+          58,
+          58
+        ]
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250902T095837"
+  }
+]

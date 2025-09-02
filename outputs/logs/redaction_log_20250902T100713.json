@@ -1,0 +1,222 @@
+[
+  {
+    "file": "Driving Licence.pdf",
+    "type": "pdf",
+    "page": 1,
+    "detections": [
+      {
+        "label": "DOB",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Date Of Birth\n23-10-2004"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          402,
+          168,
+          60,
+          6
+        ],
+        "matched": "570"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          111,
+          73,
+          138,
+          20
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "type": "FACE",
+        "box": [
+          403,
+          74,
+          50,
+          50
+        ]
+      }
+    ],
+    "redacted": [
+      {
+        "label": "DOB",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Date Of Birth\n23-10-2004"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          402,
+          168,
+          60,
+          6
+        ],
+        "matched": "570"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          111,
+          73,
+          138,
+          20
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "type": "FACE",
+        "box": [
+          403,
+          74,
+          50,
+          50
+        ]
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250902T100639"
+  },
+  {
+    "file": "Driving Licence.pdf",
+    "type": "pdf",
+    "page": 2,
+    "detections": [
+      {
+        "label": "CVV",
+        "box": [
+          10,
+          140,
+          28,
+          8
+        ],
+        "matched": "455"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          192,
+          176,
+          52,
+          8
+        ],
+        "matched": "120"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          362,
+          266,
+          44,
+          6
+        ],
+        "matched": "0000170011"
+      }
+    ],
+    "redacted": [
+      {
+        "label": "CVV",
+        "box": [
+          10,
+          140,
+          28,
+          8
+        ],
+        "matched": "455"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          192,
+          176,
+          52,
+          8
+        ],
+        "matched": "120"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          362,
+          266,
+          44,
+          6
+        ],
+        "matched": "0000170011"
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250902T100713"
+  }
+]
