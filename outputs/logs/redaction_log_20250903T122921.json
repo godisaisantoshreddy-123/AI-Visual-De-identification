@@ -1,0 +1,412 @@
+[
+  {
+    "file": "Carlos_E_Rodriguez.pdf",
+    "detections": [
+      {
+        "label": "PHONE",
+        "box": [
+          62,
+          528,
+          254,
+          32
+        ],
+        "matched": "(786) 555-9312"
+      },
+      {
+        "label": "PHONE",
+        "box": [
+          61,
+          1383,
+          562,
+          36
+        ],
+        "matched": "1\u096d65092039"
+      },
+      {
+        "label": "SSN",
+        "box": [
+          60,
+          642,
+          208,
+          30
+        ],
+        "matched": "312-56-7723"
+      },
+      {
+        "label": "NPI",
+        "box": [
+          61,
+          1383,
+          562,
+          36
+        ],
+        "matched": "1\u096d65092039"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          62,
+          928,
+          302,
+          30
+        ],
+        "matched": "HUM99384710"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          62,
+          528,
+          254,
+          32
+        ],
+        "matched": "786"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          62,
+          528,
+          254,
+          32
+        ],
+        "matched": "555"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          62,
+          528,
+          254,
+          32
+        ],
+        "matched": "312"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          61,
+          1383,
+          562,
+          36
+        ],
+        "matched": "1\u096d65092039"
+      },
+      {
+        "label": "ICD10",
+        "box": [
+          60,
+          1272,
+          220,
+          30
+        ],
+        "matched": "J44.9"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          62,
+          928,
+          302,
+          30
+        ],
+        "matched": "Member ID: HUM99384710"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          59,
+          409,
+          207,
+          38
+        ],
+        "matched": "Ethnicity: Hispanic"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          62,
+          470,
+          528,
+          30
+        ],
+        "matched": "Address\u0903 1\u096a\u096a\u0968 Palm Tree Blvd, Miami, FL \u0969\u09691\u096d\u096c"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          60,
+          241,
+          302,
+          33
+        ],
+        "matched": "Carlos E. Rodriguez"
+      },
+      {
+        "label": "GPE",
+        "box": [
+          62,
+          470,
+          528,
+          30
+        ],
+        "matched": "Miami"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          62,
+          871,
+          446,
+          31
+        ],
+        "matched": "Humana Medicare Advantage"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          62,
+          871,
+          446,
+          31
+        ],
+        "matched": "PPO"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          61,
+          1383,
+          562,
+          36
+        ],
+        "matched": "Amanda Lee"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          62,
+          300,
+          224,
+          28
+        ],
+        "matched": "DO"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          61,
+          1383,
+          562,
+          36
+        ],
+        "matched": "NPI"
+      }
+    ],
+    "redacted": [
+      {
+        "label": "PHONE",
+        "box": [
+          62,
+          528,
+          254,
+          32
+        ],
+        "matched": "(786) 555-9312"
+      },
+      {
+        "label": "PHONE",
+        "box": [
+          61,
+          1383,
+          562,
+          36
+        ],
+        "matched": "1\u096d65092039"
+      },
+      {
+        "label": "SSN",
+        "box": [
+          60,
+          642,
+          208,
+          30
+        ],
+        "matched": "312-56-7723"
+      },
+      {
+        "label": "NPI",
+        "box": [
+          61,
+          1383,
+          562,
+          36
+        ],
+        "matched": "1\u096d65092039"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          62,
+          928,
+          302,
+          30
+        ],
+        "matched": "HUM99384710"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          62,
+          528,
+          254,
+          32
+        ],
+        "matched": "786"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          62,
+          528,
+          254,
+          32
+        ],
+        "matched": "555"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          62,
+          528,
+          254,
+          32
+        ],
+        "matched": "312"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          61,
+          1383,
+          562,
+          36
+        ],
+        "matched": "1\u096d65092039"
+      },
+      {
+        "label": "ICD10",
+        "box": [
+          60,
+          1272,
+          220,
+          30
+        ],
+        "matched": "J44.9"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          62,
+          928,
+          302,
+          30
+        ],
+        "matched": "Member ID: HUM99384710"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          59,
+          409,
+          207,
+          38
+        ],
+        "matched": "Ethnicity: Hispanic"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          62,
+          470,
+          528,
+          30
+        ],
+        "matched": "Address\u0903 1\u096a\u096a\u0968 Palm Tree Blvd, Miami, FL \u0969\u09691\u096d\u096c"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          60,
+          241,
+          302,
+          33
+        ],
+        "matched": "Carlos E. Rodriguez"
+      },
+      {
+        "label": "GPE",
+        "box": [
+          62,
+          470,
+          528,
+          30
+        ],
+        "matched": "Miami"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          62,
+          871,
+          446,
+          31
+        ],
+        "matched": "Humana Medicare Advantage"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          62,
+          871,
+          446,
+          31
+        ],
+        "matched": "PPO"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          61,
+          1383,
+          562,
+          36
+        ],
+        "matched": "Amanda Lee"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          62,
+          300,
+          224,
+          28
+        ],
+        "matched": "DO"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          61,
+          1383,
+          562,
+          36
+        ],
+        "matched": "NPI"
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250903T122921",
+    "page": "(p1)"
+  }
+]

@@ -1,0 +1,842 @@
+[
+  {
+    "file": "Driving Licence.pdf",
+    "type": "pdf",
+    "page": 1,
+    "detections": [
+      {
+        "label": "DOB",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Date Of Birth\n23-10-2004"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          402,
+          168,
+          60,
+          6
+        ],
+        "matched": "570"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          111,
+          73,
+          138,
+          20
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "label": "DL",
+        "box": [
+          111,
+          73,
+          138,
+          20
+        ],
+        "matched": "4P32720240003453"
+      },
+      {
+        "label": "DL",
+        "box": [
+          113,
+          123,
+          70,
+          14
+        ],
+        "matched": "30-10-2024"
+      },
+      {
+        "label": "DL",
+        "box": [
+          203,
+          123,
+          68,
+          14
+        ],
+        "matched": "22-10-2044"
+      },
+      {
+        "label": "DL",
+        "box": [
+          402,
+          168,
+          60,
+          6
+        ],
+        "matched": "0000"
+      },
+      {
+        "label": "DL",
+        "box": [
+          402,
+          168,
+          60,
+          6
+        ],
+        "matched": "570"
+      },
+      {
+        "label": "DL",
+        "box": [
+          99,
+          201,
+          68,
+          14
+        ],
+        "matched": "23-10-2004"
+      },
+      {
+        "label": "DL",
+        "box": [
+          13,
+          283,
+          122,
+          16
+        ],
+        "matched": "523357"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          117,
+          45,
+          214,
+          18
+        ],
+        "matched": "PRADESH"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          61,
+          171,
+          174,
+          16
+        ],
+        "matched": "SANTOSH"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          61,
+          171,
+          174,
+          16
+        ],
+        "matched": "REDDY"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          11,
+          219,
+          310,
+          16
+        ],
+        "matched": "SURYA"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          11,
+          219,
+          310,
+          16
+        ],
+        "matched": "NARAYANA"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          61,
+          171,
+          174,
+          16
+        ],
+        "matched": "REDDY"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          13,
+          269,
+          182,
+          14
+        ],
+        "matched": "PEDDA"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          13,
+          269,
+          182,
+          14
+        ],
+        "matched": "OFFOCE"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          13,
+          283,
+          122,
+          16
+        ],
+        "matched": "GIDDALURU"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          13,
+          283,
+          122,
+          16
+        ],
+        "matched": "523357"
+      },
+      {
+        "type": "FACE",
+        "box": [
+          403,
+          74,
+          50,
+          50
+        ]
+      }
+    ],
+    "redacted": [
+      {
+        "label": "DOB",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Date Of Birth\n23-10-2004"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          402,
+          168,
+          60,
+          6
+        ],
+        "matched": "570"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          111,
+          73,
+          138,
+          20
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "label": "DL",
+        "box": [
+          111,
+          73,
+          138,
+          20
+        ],
+        "matched": "4P32720240003453"
+      },
+      {
+        "label": "DL",
+        "box": [
+          113,
+          123,
+          70,
+          14
+        ],
+        "matched": "30-10-2024"
+      },
+      {
+        "label": "DL",
+        "box": [
+          203,
+          123,
+          68,
+          14
+        ],
+        "matched": "22-10-2044"
+      },
+      {
+        "label": "DL",
+        "box": [
+          402,
+          168,
+          60,
+          6
+        ],
+        "matched": "0000"
+      },
+      {
+        "label": "DL",
+        "box": [
+          402,
+          168,
+          60,
+          6
+        ],
+        "matched": "570"
+      },
+      {
+        "label": "DL",
+        "box": [
+          99,
+          201,
+          68,
+          14
+        ],
+        "matched": "23-10-2004"
+      },
+      {
+        "label": "DL",
+        "box": [
+          13,
+          283,
+          122,
+          16
+        ],
+        "matched": "523357"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          117,
+          45,
+          214,
+          18
+        ],
+        "matched": "PRADESH"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          61,
+          171,
+          174,
+          16
+        ],
+        "matched": "SANTOSH"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          61,
+          171,
+          174,
+          16
+        ],
+        "matched": "REDDY"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          11,
+          219,
+          310,
+          16
+        ],
+        "matched": "SURYA"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          11,
+          219,
+          310,
+          16
+        ],
+        "matched": "NARAYANA"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          61,
+          171,
+          174,
+          16
+        ],
+        "matched": "REDDY"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          13,
+          269,
+          182,
+          14
+        ],
+        "matched": "PEDDA"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          13,
+          269,
+          182,
+          14
+        ],
+        "matched": "OFFOCE"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          13,
+          283,
+          122,
+          16
+        ],
+        "matched": "GIDDALURU"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          13,
+          283,
+          122,
+          16
+        ],
+        "matched": "523357"
+      },
+      {
+        "type": "FACE",
+        "box": [
+          403,
+          74,
+          50,
+          50
+        ]
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250903T095751"
+  },
+  {
+    "file": "Driving Licence.pdf",
+    "type": "pdf",
+    "page": 2,
+    "detections": [
+      {
+        "label": "CVV",
+        "box": [
+          10,
+          140,
+          28,
+          8
+        ],
+        "matched": "455"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          192,
+          176,
+          52,
+          8
+        ],
+        "matched": "120"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          362,
+          266,
+          44,
+          6
+        ],
+        "matched": "0000170011"
+      },
+      {
+        "label": "DL",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "AP32720240003453"
+      },
+      {
+        "label": "DL",
+        "box": [
+          10,
+          140,
+          28,
+          8
+        ],
+        "matched": "455"
+      },
+      {
+        "label": "DL",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "AP327"
+      },
+      {
+        "label": "DL",
+        "box": [
+          192,
+          176,
+          52,
+          8
+        ],
+        "matched": "120"
+      },
+      {
+        "label": "DL",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "AP327"
+      },
+      {
+        "label": "DL",
+        "box": [
+          191,
+          197,
+          56,
+          14
+        ],
+        "matched": "30-10-2024"
+      },
+      {
+        "label": "DL",
+        "box": [
+          362,
+          266,
+          44,
+          6
+        ],
+        "matched": "0000170011"
+      },
+      {
+        "label": "NPI",
+        "box": [
+          362,
+          266,
+          44,
+          6
+        ],
+        "matched": "0000170011"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          121,
+          57,
+          176,
+          16
+        ],
+        "matched": "ADPVEH"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "AP327"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "AP327"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          362,
+          266,
+          44,
+          6
+        ],
+        "matched": "0000170011"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          313,
+          295,
+          132,
+          12
+        ],
+        "matched": "DFFICE"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          313,
+          295,
+          132,
+          12
+        ],
+        "matched": "MARKAPUR"
+      }
+    ],
+    "redacted": [
+      {
+        "label": "CVV",
+        "box": [
+          10,
+          140,
+          28,
+          8
+        ],
+        "matched": "455"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          192,
+          176,
+          52,
+          8
+        ],
+        "matched": "120"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          362,
+          266,
+          44,
+          6
+        ],
+        "matched": "0000170011"
+      },
+      {
+        "label": "DL",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "AP32720240003453"
+      },
+      {
+        "label": "DL",
+        "box": [
+          10,
+          140,
+          28,
+          8
+        ],
+        "matched": "455"
+      },
+      {
+        "label": "DL",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "AP327"
+      },
+      {
+        "label": "DL",
+        "box": [
+          192,
+          176,
+          52,
+          8
+        ],
+        "matched": "120"
+      },
+      {
+        "label": "DL",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "AP327"
+      },
+      {
+        "label": "DL",
+        "box": [
+          191,
+          197,
+          56,
+          14
+        ],
+        "matched": "30-10-2024"
+      },
+      {
+        "label": "DL",
+        "box": [
+          362,
+          266,
+          44,
+          6
+        ],
+        "matched": "0000170011"
+      },
+      {
+        "label": "NPI",
+        "box": [
+          362,
+          266,
+          44,
+          6
+        ],
+        "matched": "0000170011"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          121,
+          57,
+          176,
+          16
+        ],
+        "matched": "ADPVEH"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "AP327"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          15,
+          17,
+          184,
+          18
+        ],
+        "matched": "AP327"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          362,
+          266,
+          44,
+          6
+        ],
+        "matched": "0000170011"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          313,
+          295,
+          132,
+          12
+        ],
+        "matched": "DFFICE"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          313,
+          295,
+          132,
+          12
+        ],
+        "matched": "MARKAPUR"
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250903T095825"
+  }
+]

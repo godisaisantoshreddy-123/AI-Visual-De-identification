@@ -1,0 +1,202 @@
+[
+  {
+    "file": "Driving Licence.pdf",
+    "type": "pdf",
+    "page": 1,
+    "detections": [
+      {
+        "label": "DOB",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Date Of Birth\n23-10-2004"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          112,
+          14,
+          266,
+          28
+        ],
+        "matched": "Indian Union"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          199,
+          103,
+          84,
+          16
+        ],
+        "matched": "INT"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          175,
+          201,
+          84,
+          14
+        ],
+        "matched": "Blood Group"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          11,
+          219,
+          310,
+          16
+        ],
+        "matched": "Daughter Wife"
+      },
+      {
+        "type": "FACE",
+        "box": [
+          403,
+          74,
+          50,
+          50
+        ]
+      }
+    ],
+    "redacted": [
+      {
+        "label": "DOB",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Date Of Birth\n23-10-2004"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          112,
+          14,
+          266,
+          28
+        ],
+        "matched": "Indian Union"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          199,
+          103,
+          84,
+          16
+        ],
+        "matched": "INT"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          175,
+          201,
+          84,
+          14
+        ],
+        "matched": "Blood Group"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          11,
+          219,
+          310,
+          16
+        ],
+        "matched": "Daughter Wife"
+      },
+      {
+        "type": "FACE",
+        "box": [
+          403,
+          74,
+          50,
+          50
+        ]
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250903T091506"
+  },
+  {
+    "file": "Driving Licence.pdf",
+    "type": "pdf",
+    "page": 2,
+    "detections": [
+      {
+        "label": "ORG",
+        "box": [
+          83,
+          145,
+          28,
+          12
+        ],
+        "matched": "Coda"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          304,
+          154,
+          40,
+          8
+        ],
+        "matched": "LmDer"
+      },
+      {
+        "label": "GPE",
+        "box": [
+          427,
+          151,
+          52,
+          12
+        ],
+        "matched": "IssluledBy"
+      }
+    ],
+    "redacted": [
+      {
+        "label": "ORG",
+        "box": [
+          83,
+          145,
+          28,
+          12
+        ],
+        "matched": "Coda"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          304,
+          154,
+          40,
+          8
+        ],
+        "matched": "LmDer"
+      },
+      {
+        "label": "GPE",
+        "box": [
+          427,
+          151,
+          52,
+          12
+        ],
+        "matched": "IssluledBy"
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250903T091506"
+  }
+]

@@ -2,209 +2,279 @@
 import os
 import io
 import json
-import zipfile
 from datetime import datetime
-from concurrent.futures import ThreadPoolExecutor
 
 import streamlit as st
 from PIL import Image, ImageDraw, ImageFont
 
-# -----------------------------
-# Handle Spacy model for cloud deployment
-# -----------------------------
-try:
-    import spacy
-    nlp = spacy.load("en_core_web_sm")
-except:
-    import subprocess
-    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
-    import spacy
-    nlp = spacy.load("en_core_web_sm")
-
-# -----------------------------
-# Local imports
-# -----------------------------
 from utils.ocr_utils import get_ocr_reader, pil_to_cv, cv_to_pil, ocr_with_boxes
 from utils.detect_utils import (
-    get_all_text_findings,
+    regex_entities,
     align_text_findings_to_boxes,
     detect_faces,
     find_signature_regions,
-    mask_excel_cells_and_render
+    detect_qr_regions,
+    ner_findings,
 )
-from utils.redact_utils import apply_redactions_cv, apply_redactions_pil
+from utils.redact_utils import apply_redactions_cv
 from utils.pdf_utils import load_pages_from_pdf, remove_pdf_metadata_bytes, export_images_to_pdf
-from utils.doc_utils import extract_text_from_docx_stream
 
-# -----------------------------
-# Setup output folders
-# -----------------------------
+# ---------- Folders ----------
 OUTPUT_DIR = "outputs"
 RED_PDFS = os.path.join(OUTPUT_DIR, "redacted_pdfs")
-RED_ZIPS = os.path.join(OUTPUT_DIR, "redacted_zips")
 RED_LOGS = os.path.join(OUTPUT_DIR, "logs")
-UPLOAD_DIR = "uploads"
-
-for d in (RED_PDFS, RED_ZIPS, RED_LOGS, UPLOAD_DIR):
+for d in (RED_PDFS, RED_LOGS):
     os.makedirs(d, exist_ok=True)
 
-# -----------------------------
-# Streamlit page config
-# -----------------------------
+# ---------- Page ----------
 st.set_page_config(page_title="AI Visual De-ID", layout="wide")
 st.title("🔒 AI Visual De-identification – Privacy by Design")
 
-with st.expander("ℹ️ Instructions", expanded=True):
+with st.expander("Instructions"):
     st.markdown("""
-    Upload images (**jpg/png/jpeg**), **PDFs, DOCX, XLSX**.  
-    The app will:
-    - OCR the document
-    - Detect **PII/PHI** via regex and heuristics
-    - Detect **faces** and **signatures**
-    - Let you toggle detections per-box
-    - Redact with **blur** or **black box**
-    - Export results as **PDF, ZIP (images + JSON log)**
+    - Upload **images, PDFs, DOCX, XLSX** (multi-file supported).
+    - Choose **Auto-Redact** to skip the detection table (faster & cleaner).
+    - You’ll see a **progress bar**. When 100% is reached, downloads appear.
+    - We redact by **Blur** or **Black box**, including **QR codes**, **faces**, **signatures**.
+    - Extra PII: **SSN, NPI, Insurance IDs, ICD-10, Address heuristic**.
+    - Optional: **spaCy NER** to catch names/addresses/orgs.
     """)
 
-# -----------------------------
-# Options
-# -----------------------------
-redact_method = st.radio("Redaction method", options=["blur", "black"], index=0, horizontal=True)
-enable_faces = st.checkbox("Detect Faces", value=True)
-enable_signatures = st.checkbox("Detect Signatures", value=True)
-use_easyocr = st.checkbox("Use EasyOCR (recommended)", value=True)
-st.write("")
+# ---------- Options ----------
+colA, colB, colC, colD = st.columns([1.5, 1.2, 1.2, 1.5])
+with colA:
+    redact_method = st.radio("Redaction method", ["blur", "black"], horizontal=True)
+with colB:
+    fast_mode = st.checkbox("⚡ Fast mode (downscale for OCR)", value=True)
+with colC:
+    enable_ner = st.checkbox("NER for names/addresses (spaCy)", value=True)
+with colD:
+    auto_redact = st.checkbox("Auto-redact (skip detection table)", value=True)
+
+colE, colF, colG = st.columns([1, 1, 1])
+with colE:
+    enable_faces = st.checkbox("Detect Faces", value=True)
+with colF:
+    enable_signatures = st.checkbox("Detect Signatures", value=True)
+with colG:
+    use_easyocr = st.checkbox("Use EasyOCR", value=True)
 
 uploads = st.file_uploader(
     "Upload files (images, pdf, docx, xlsx). You can select multiple.",
     accept_multiple_files=True,
-    type=["png","jpg","jpeg","pdf","docx","xlsx"]
+    type=["png", "jpg", "jpeg", "pdf", "docx", "xlsx"],
 )
 
 process = st.button("🚀 Process & Redact")
 
-# -----------------------------
-# Helpers
-# -----------------------------
+# ---------- State ----------
+if "bundle" not in st.session_state:
+    st.session_state.bundle = None
+if "done_units" not in st.session_state:
+    st.session_state.done_units = 0
+
 def timestamp():
     return datetime.now().strftime("%Y%m%dT%H%M%S")
 
-# Threaded image/PDF page processor
-def process_image_threaded(pil_img, reader, enable_faces=True, enable_signatures=True):
-    cv_img = pil_to_cv(pil_img)
-    lines = ocr_with_boxes(pil_img, reader)
+# ---------- Helpers ----------
+@st.cache_resource
+def _get_reader(use_easyocr: bool):
+    return get_ocr_reader(use_easyocr)
+
+def _prep_pil_image(file_obj):
+    pil = Image.open(file_obj).convert("RGB")
+    max_side = 1600 if fast_mode else 2800
+    w, h = pil.size
+    if max(w, h) > max_side:
+        s = max_side / max(w, h)
+        pil = pil.resize((int(w * s), int(h * s)), Image.LANCZOS)
+    return pil
+
+def process_one_pil(pil, name, reader, progress_cb, page_tag=""):
+    cv_img = pil_to_cv(pil)
+    lines = ocr_with_boxes(pil, reader)
     full_text = "\n".join([l["text"] for l in lines])
-    text_findings = get_all_text_findings(full_text)
+
+    text_findings = regex_entities(full_text)
     text_boxes = align_text_findings_to_boxes(text_findings, lines)
+
+    ner_boxes = ner_findings(full_text, lines, enable_ner)
+
     face_boxes = detect_faces(cv_img) if enable_faces else []
     sig_boxes = find_signature_regions(cv_img, lines) if enable_signatures else []
-    merged = text_boxes + face_boxes + sig_boxes
-    redacted_pil = apply_redactions_cv(cv_img, merged, mode=redact_method)
-    return redacted_pil, merged
+    qr_boxes = detect_qr_regions(cv_img)
 
-def process_images_in_batch(images, reader, enable_faces=True, enable_signatures=True):
-    results = []
-    with ThreadPoolExecutor(max_workers=4) as executor:
-        futures = [executor.submit(process_image_threaded, img, reader, enable_faces, enable_signatures) for img in images]
-        for f in futures:
-            red_pil, merged = f.result()
-            results.append((red_pil, merged))
-    return results
+    merged = text_boxes + ner_boxes + face_boxes + sig_boxes + qr_boxes
 
-# -----------------------------
-# Main logic
-# -----------------------------
+    if auto_redact:
+        selected_boxes = merged
+    else:
+        st.subheader(f"Detections {page_tag}".strip())
+        cols_hdr = st.columns([3, 3, 4, 2])
+        cols_hdr[0].markdown("**Type**")
+        cols_hdr[1].markdown("**Box**")
+        cols_hdr[2].markdown("**Sample**")
+        cols_hdr[3].markdown("**Redact?**")
+        selected_boxes = []
+        for i, det in enumerate(merged):
+            label = det.get("label", det.get("type", "PII"))
+            box = det.get("box", [0, 0, 0, 0])
+            sample = (det.get("matched") or det.get("text") or "")[:60]
+            c0, c1, c2, c3 = st.columns([3, 3, 4, 2])
+            c0.write(label)
+            c1.write(f"{box[0]},{box[1]} ({box[2]}×{box[3]})")
+            c2.write(sample)
+            do = c3.checkbox(
+                f"{label}: {sample}" if sample else label,
+                value=True,
+                key=f"{name}{page_tag}_redact_{i}",
+                label_visibility="collapsed",
+            )
+            if do:
+                selected_boxes.append(det)
+
+    redacted_pil = apply_redactions_cv(cv_img, selected_boxes, mode=redact_method)
+    st.image(redacted_pil, caption=f"Redacted preview {page_tag}".strip(), use_container_width=True)
+
+    progress_cb()
+    return redacted_pil, {
+        "file": name,
+        "detections": merged,
+        "redacted": selected_boxes,
+        "mode": redact_method,
+        "timestamp": timestamp(),
+        "page": page_tag,
+    }
+
+# ---------- Main ----------
 if process and uploads:
-    reader = get_ocr_reader(use_easyocr)
+    reader = _get_reader(use_easyocr)
+
+    total_units = 0
+    prelim_pages_by_file = {}
+    for f in uploads:
+        ext = os.path.splitext(f.name)[1].lower()
+        if ext == ".pdf":
+            raw = f.read(); f.seek(0)
+            try:
+                pages = load_pages_from_pdf(remove_pdf_metadata_bytes(raw))
+                prelim_pages_by_file[f.name] = len(pages)
+                total_units += len(pages)
+            except Exception:
+                prelim_pages_by_file[f.name] = 1
+                total_units += 1
+        else:
+            total_units += 1
+
+    st.session_state.done_units = 0
+    prog = st.progress(0.0)
+
+    def progress_cb():
+        st.session_state.done_units += 1
+        prog.progress(min(1.0, st.session_state.done_units / max(1, total_units)))
+
     all_logs = []
     redacted_images_global = []
 
-    progress_bar = st.progress(0)
-    total_files = len(uploads)
+    for file in uploads:
+        st.markdown(f"### 📄 Processing {file.name}")
+        name = file.name
+        ext = os.path.splitext(name)[1].lower()
 
-    with st.spinner("Processing documents..."):
-        for file_idx, file in enumerate(uploads, start=1):
-            st.markdown(f"### 📄 Processing `{file.name}`")
-            name = file.name
-            ext = os.path.splitext(name)[1].lower()
+        if ext in [".png", ".jpg", ".jpeg"]:
+            pil = _prep_pil_image(file)
+            red_pil, log = process_one_pil(pil, name, reader, progress_cb)
+            redacted_images_global.append(red_pil); all_logs.append(log)
 
-            # IMAGE HANDLER
-            if ext in [".png", ".jpg", ".jpeg"]:
-                pil = Image.open(file).convert("RGB")
-                red_pil, merged = process_image_threaded(pil, reader, enable_faces, enable_signatures)
-                st.image(red_pil, caption="Redacted preview", use_column_width=True)
-                redacted_images_global.append(red_pil)
-                all_logs.append({"file": name, "type":"image", "detections": merged, "redacted": merged, "mode": redact_method, "timestamp": timestamp()})
-                progress_bar.progress(file_idx / total_files)
+        elif ext == ".pdf":
+            raw = file.read(); file.seek(0)
+            stripped = remove_pdf_metadata_bytes(raw)
+            pages = load_pages_from_pdf(stripped, dpi=(140 if fast_mode else 200), max_px=(1600 if fast_mode else 2200))
+            for pno, pil in enumerate(pages, start=1):
+                red_pil, log = process_one_pil(pil, name, reader, progress_cb, page_tag=f"(p{pno})")
+                redacted_images_global.append(red_pil); all_logs.append(log)
 
-            # PDF HANDLER
-            elif ext == ".pdf":
-                raw = file.read()
-                stripped = remove_pdf_metadata_bytes(raw)
-                pages = load_pages_from_pdf(stripped)
-                batch_results = process_images_in_batch(pages, reader, enable_faces, enable_signatures)
-                for pno, (red_pil, merged) in enumerate(batch_results, start=1):
-                    st.image(red_pil, caption=f"Page {pno} redacted preview", use_column_width=True)
-                    redacted_images_global.append(red_pil)
-                    all_logs.append({"file": name, "type":"pdf","page":pno,"detections":merged,"redacted":merged,"mode":redact_method,"timestamp":timestamp()})
-                    progress_bar.progress((file_idx-1 + pno/len(pages))/total_files)
+        elif ext == ".docx":
+            from utils.doc_utils import extract_text_from_docx_stream
+            text = extract_text_from_docx_stream(file)
+            img = Image.new("RGB", (1654, 2339), "white")
+            draw = ImageDraw.Draw(img)
+            try:
+                font = ImageFont.truetype("DejaVuSans.ttf", 18)
+            except:
+                font = ImageFont.load_default()
+            y = 40
+            for line in text.splitlines():
+                draw.text((40, y), line[:1800], fill="black", font=font)
+                y += 24
+                if y > 2300:
+                    break
+            pil = img
+            red_pil, log = process_one_pil(pil, name, reader, progress_cb)
+            redacted_images_global.append(red_pil); all_logs.append(log)
 
-            # DOCX HANDLER
-            elif ext == ".docx":
-                text = extract_text_from_docx_stream(file)
-                text_findings = get_all_text_findings(text)
+        elif ext == ".xlsx":
+            import openpyxl
+            wb = openpyxl.load_workbook(filename=io.BytesIO(file.read()), data_only=True)
+            for sheet in wb.sheetnames:
+                ws = wb[sheet]
+                rows = [[("" if c is None else str(c)) for c in r] for r in ws.iter_rows(values_only=True)]
                 img = Image.new("RGB", (1654, 2339), "white")
                 draw = ImageDraw.Draw(img)
-                try: font = ImageFont.truetype("DejaVuSans.ttf", 18)
-                except: font = ImageFont.load_default()
+                try:
+                    font = ImageFont.truetype("DejaVuSans.ttf", 16)
+                except:
+                    font = ImageFont.load_default()
                 y = 40
-                for line in text.splitlines():
-                    draw.text((40,y), line[:2000], fill="black", font=font)
+                for r in rows:
+                    line = " | ".join(r)
+                    draw.text((40, y), line[:2000], fill="black", font=font)
                     y += 22
-                    if y > 2280: break
-                merged = [{"label": m["label"], "matched": m["matched"], "box":[40, y-40, 200, 24]} for m in text_findings]
-                red_pil = apply_redactions_pil(img, merged, mode=redact_method)
-                st.image(red_pil, caption="DOCX redacted preview", use_column_width=True)
-                redacted_images_global.append(red_pil)
-                all_logs.append({"file": name, "type":"docx", "detections": merged,"redacted": merged,"mode": redact_method,"timestamp":timestamp()})
-                progress_bar.progress(file_idx / total_files)
+                    if y > 2280:
+                        break
+                red_pil, log = process_one_pil(img, f"{name} [{sheet}]", reader, progress_cb)
+                redacted_images_global.append(red_pil); all_logs.append(log)
 
-            # XLSX HANDLER
-            elif ext == ".xlsx":
-                sheets_rendered = mask_excel_cells_and_render(file)
-                for idx, (sheetname, pil_img, detections) in enumerate(sheets_rendered):
-                    red_pil = apply_redactions_pil(pil_img, detections, mode=redact_method)
-                    st.image(red_pil, caption=f"Sheet {sheetname} redacted preview", use_column_width=True)
-                    redacted_images_global.append(red_pil)
-                    all_logs.append({"file": name, "type":"xlsx","sheet": sheetname,"detections": detections,"redacted": detections,"mode":redact_method,"timestamp":timestamp()})
-                progress_bar.progress(file_idx / total_files)
+        else:
+            st.warning(f"Unsupported file type: {ext}")
+            progress_cb()
 
-            else:
-                st.warning(f"Unsupported file type: {ext}")
-
-    # Export outputs
     if redacted_images_global:
+        pdf_bytes = export_images_to_pdf(redacted_images_global).getvalue()
         ts = timestamp()
-        pdf_bytes = export_images_to_pdf(redacted_images_global)
         pdf_name = f"redacted_{ts}.pdf"
-        pdf_path = os.path.join(RED_PDFS, pdf_name)
-        with open(pdf_path, "wb") as f: f.write(pdf_bytes.getvalue())
-        st.success(f"Redacted PDF created: {pdf_name}")
-        st.download_button("⬇️ Download Redacted PDF", data=open(pdf_path,"rb"), file_name=pdf_name, mime="application/pdf")
+        log_name = f"redaction_log_{ts}.json"
 
-        zip_name = f"redacted_bundle_{ts}.zip"
-        zip_path = os.path.join(RED_ZIPS, zip_name)
-        with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
-            for i, img in enumerate(redacted_images_global):
-                b = io.BytesIO()
-                img.save(b, format="PNG")
-                z.writestr(f"redacted_{i+1:03d}.png", b.getvalue())
-            log_name = f"redaction_log_{ts}.json"
-            z.writestr(log_name, json.dumps(all_logs, indent=2))
-        st.download_button("⬇️ Download ZIP (images + log)", data=open(zip_path,"rb"), file_name=zip_name, mime="application/zip")
+        st.session_state.bundle = {
+            "pdf_bytes": pdf_bytes,
+            "pdf_name": pdf_name,
+            "log_json": json.dumps(all_logs, indent=2).encode("utf-8"),
+            "log_name": log_name,
+        }
 
-        log_path = os.path.join(RED_LOGS, f"redaction_log_{ts}.json")
-        with open(log_path, "w") as f: json.dump(all_logs, f, indent=2)
-        st.success("✅ All done — check outputs/ folder or download above.")
-else:
-    st.info("Upload files and click 'Process & Redact' to start.")
+        with open(os.path.join(RED_PDFS, pdf_name), "wb") as f:
+            f.write(pdf_bytes)
+        with open(os.path.join(RED_LOGS, log_name), "wb") as f:
+            f.write(st.session_state.bundle["log_json"])
+
+        st.success("✅ All done — files are ready below.")
+    else:
+        st.info("No redacted output was produced.")
+        st.session_state.bundle = None
+
+# ---------- Download section ----------
+if st.session_state.bundle:
+    st.download_button(
+        "⬇️ Download Redacted PDF",
+        data=st.session_state.bundle["pdf_bytes"],
+        file_name=st.session_state.bundle["pdf_name"],
+        mime="application/pdf",
+        key="download_pdf",
+    )
+    st.download_button(
+        "⬇️ Download JSON Redaction Log",
+        data=st.session_state.bundle["log_json"],
+        file_name=st.session_state.bundle["log_name"],
+        mime="application/json",
+        key="download_log",
+    )

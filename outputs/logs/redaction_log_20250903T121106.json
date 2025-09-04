@@ -1,0 +1,560 @@
+[
+  {
+    "file": "Driving Licence.pdf",
+    "detections": [
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          125,
+          47,
+          228,
+          20
+        ],
+        "matched": "ANDHRA"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          125,
+          47,
+          228,
+          20
+        ],
+        "matched": "PRADESH"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          65,
+          181,
+          130,
+          16
+        ],
+        "matched": "SANTOSH"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          13,
+          231,
+          328,
+          20
+        ],
+        "matched": "NARAYANA"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          13,
+          287,
+          194,
+          16
+        ],
+        "matched": "OFFOCE"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          13,
+          302,
+          130,
+          16
+        ],
+        "matched": "GIDDALURU"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          13,
+          302,
+          130,
+          16
+        ],
+        "matched": "523357"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          119,
+          79,
+          146,
+          20
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "label": "DOB",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Date Of Birth\n23-10-2004"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          13,
+          287,
+          194,
+          16
+        ],
+        "matched": "PEDDA POST OFFOCE ROADD,"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          120,
+          15,
+          282,
+          29
+        ],
+        "matched": "Indian Union"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          187,
+          213,
+          90,
+          16
+        ],
+        "matched": "Blood Group"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          349,
+          213,
+          112,
+          18
+        ],
+        "matched": "Organ"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Nlo\nSon"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          13,
+          231,
+          328,
+          20
+        ],
+        "matched": "Daughter Wiie"
+      },
+      {
+        "type": "FACE",
+        "box": [
+          430,
+          80,
+          53,
+          53
+        ]
+      }
+    ],
+    "redacted": [
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          125,
+          47,
+          228,
+          20
+        ],
+        "matched": "ANDHRA"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          125,
+          47,
+          228,
+          20
+        ],
+        "matched": "PRADESH"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          65,
+          181,
+          130,
+          16
+        ],
+        "matched": "SANTOSH"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          13,
+          231,
+          328,
+          20
+        ],
+        "matched": "NARAYANA"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          13,
+          287,
+          194,
+          16
+        ],
+        "matched": "OFFOCE"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          13,
+          302,
+          130,
+          16
+        ],
+        "matched": "GIDDALURU"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          13,
+          302,
+          130,
+          16
+        ],
+        "matched": "523357"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          119,
+          79,
+          146,
+          20
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "label": "DOB",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Date Of Birth\n23-10-2004"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          13,
+          287,
+          194,
+          16
+        ],
+        "matched": "PEDDA POST OFFOCE ROADD,"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          120,
+          15,
+          282,
+          29
+        ],
+        "matched": "Indian Union"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          187,
+          213,
+          90,
+          16
+        ],
+        "matched": "Blood Group"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          349,
+          213,
+          112,
+          18
+        ],
+        "matched": "Organ"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Nlo\nSon"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          13,
+          231,
+          328,
+          20
+        ],
+        "matched": "Daughter Wiie"
+      },
+      {
+        "type": "FACE",
+        "box": [
+          430,
+          80,
+          53,
+          53
+        ]
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250903T121038",
+    "page": "(p1)"
+  },
+  {
+    "file": "Driving Licence.pdf",
+    "detections": [
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          151,
+          187,
+          38,
+          12
+        ],
+        "matched": "A4P327"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          335,
+          313,
+          140,
+          14
+        ],
+        "matched": "OFFICE"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          335,
+          313,
+          140,
+          14
+        ],
+        "matched": "MARKAPUR"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          15,
+          19,
+          198,
+          18
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          15,
+          19,
+          198,
+          18
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          386,
+          286,
+          48,
+          6
+        ],
+        "matched": "020"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          386,
+          292,
+          28,
+          6
+        ],
+        "matched": "112"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          15,
+          19,
+          198,
+          18
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Hilll Validlity\nClass\nCode\n"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Date Off\nVehicle\nBadge\nBadgc\nBadge"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          268,
+          161,
+          47,
+          15
+        ],
+        "matched": "Catcgon"
+      }
+    ],
+    "redacted": [
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          151,
+          187,
+          38,
+          12
+        ],
+        "matched": "A4P327"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          335,
+          313,
+          140,
+          14
+        ],
+        "matched": "OFFICE"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          335,
+          313,
+          140,
+          14
+        ],
+        "matched": "MARKAPUR"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          15,
+          19,
+          198,
+          18
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          15,
+          19,
+          198,
+          18
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          386,
+          286,
+          48,
+          6
+        ],
+        "matched": "020"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          386,
+          292,
+          28,
+          6
+        ],
+        "matched": "112"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          15,
+          19,
+          198,
+          18
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Hilll Validlity\nClass\nCode\n"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Date Off\nVehicle\nBadge\nBadgc\nBadge"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          268,
+          161,
+          47,
+          15
+        ],
+        "matched": "Catcgon"
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250903T121106",
+    "page": "(p2)"
+  }
+]
