@@ -1,7 +1,7 @@
-# utils/detect_utils.py
 import re
 import cv2
 import numpy as np
+from pyzbar.pyzbar import decode
 
 # ---------- Optional spaCy NER (names, addresses, orgs) ----------
 _NLP = None
@@ -55,6 +55,7 @@ ADDRESS_HINT_WORDS = [
 ]
 
 
+# ---------- Regex findings ----------
 def regex_entities(text: str):
     findings = []
     for label, pat in PATTERNS.items():
@@ -135,8 +136,7 @@ def find_signature_regions(cv_img, ocr_lines):
     return regions
 
 
-# ---------- QR code detection (pyzbar, more reliable) ----------
-from pyzbar.pyzbar import decode
+# ---------- QR code detection ----------
 def detect_qr_regions(cv_img):
     results = []
     if cv_img is None or cv_img.size == 0:
@@ -163,3 +163,27 @@ def ner_findings(text: str, ocr_lines, enable_ner: bool):
         if e.label_ in ("PERSON", "GPE", "ORG"):
             ents.append({"label": e.label_, "matched": e.text})
     return align_text_findings_to_boxes(ents, ocr_lines)
+
+
+# ---------- Unified pipeline ----------
+def detect_sensitive_regions(cv_img, ocr_lines, full_text, enable_ner: bool = False):
+    results = []
+
+    # Regex-based entities
+    regex_findings = regex_entities(full_text)
+    results.extend(align_text_findings_to_boxes(regex_findings, ocr_lines))
+
+    # Named entities (spaCy)
+    if enable_ner:
+        results.extend(ner_findings(full_text, ocr_lines, enable_ner))
+
+    # Faces
+    results.extend(detect_faces(cv_img))
+
+    # Signatures
+    results.extend(find_signature_regions(cv_img, ocr_lines))
+
+    # QR Codes
+    results.extend(detect_qr_regions(cv_img))
+
+    return results

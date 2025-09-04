@@ -7,6 +7,16 @@ from datetime import datetime
 import streamlit as st
 from PIL import Image, ImageDraw, ImageFont
 
+import spacy
+import subprocess
+
+# ---------- Ensure SpaCy model is available ----------
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+    nlp = spacy.load("en_core_web_sm")
+
 from utils.ocr_utils import get_ocr_reader, pil_to_cv, cv_to_pil, ocr_with_boxes
 from utils.detect_utils import (
     regex_entities,
@@ -41,22 +51,24 @@ with st.expander("Instructions"):
     """)
 
 # ---------- Options ----------
-colA, colB, colC, colD = st.columns([1.5, 1.2, 1.2, 1.5])
+colA, colB, colC, colD, colE = st.columns([1.5, 1.2, 1.2, 1.5, 1.5])
 with colA:
     redact_method = st.radio("Redaction method", ["blur", "black"], horizontal=True)
 with colB:
-    fast_mode = st.checkbox("⚡ Fast mode (downscale for OCR)", value=True)
+    fast_mode = st.checkbox("⚡ Fast OCR mode (downscale)", value=True)
 with colC:
     enable_ner = st.checkbox("NER for names/addresses (spaCy)", value=True)
 with colD:
     auto_redact = st.checkbox("Auto-redact (skip detection table)", value=True)
-
-colE, colF, colG = st.columns([1, 1, 1])
 with colE:
-    enable_faces = st.checkbox("Detect Faces", value=True)
+    preview_mode = st.checkbox("⚡ High-speed Preview (no blur until export)", value=True)
+
+colF, colG, colH = st.columns([1, 1, 1])
 with colF:
-    enable_signatures = st.checkbox("Detect Signatures", value=True)
+    enable_faces = st.checkbox("Detect Faces", value=True)
 with colG:
+    enable_signatures = st.checkbox("Detect Signatures", value=True)
+with colH:
     use_easyocr = st.checkbox("Use EasyOCR", value=True)
 
 uploads = st.file_uploader(
@@ -102,7 +114,7 @@ def process_one_pil(pil, name, reader, progress_cb, page_tag=""):
 
     face_boxes = detect_faces(cv_img) if enable_faces else []
     sig_boxes = find_signature_regions(cv_img, lines) if enable_signatures else []
-    qr_boxes = detect_qr_regions(cv_img)
+    qr_boxes = detect_qr_regions(cv_img)  # ✅ QR detection included always
 
     merged = text_boxes + ner_boxes + face_boxes + sig_boxes + qr_boxes
 
@@ -133,8 +145,18 @@ def process_one_pil(pil, name, reader, progress_cb, page_tag=""):
             if do:
                 selected_boxes.append(det)
 
-    redacted_pil = apply_redactions_cv(cv_img, selected_boxes, mode=redact_method)
-    st.image(redacted_pil, caption=f"Redacted preview {page_tag}".strip(), use_container_width=True)
+    # ✅ High-speed preview mode
+    if preview_mode:
+        preview_img = pil.copy()
+        draw = ImageDraw.Draw(preview_img)
+        for det in selected_boxes:
+            x, y, w, h = det.get("box", [0, 0, 0, 0])
+            draw.rectangle([x, y, x + w, y + h], outline="red", width=3)
+        st.image(preview_img, caption=f"Preview (fast mode) {page_tag}".strip(), use_container_width=True)
+        redacted_pil = pil  # store original for later export
+    else:
+        redacted_pil = apply_redactions_cv(cv_img, selected_boxes, mode=redact_method)
+        st.image(redacted_pil, caption=f"Redacted preview {page_tag}".strip(), use_container_width=True)
 
     progress_cb()
     return redacted_pil, {
@@ -151,17 +173,14 @@ if process and uploads:
     reader = _get_reader(use_easyocr)
 
     total_units = 0
-    prelim_pages_by_file = {}
     for f in uploads:
         ext = os.path.splitext(f.name)[1].lower()
         if ext == ".pdf":
             raw = f.read(); f.seek(0)
             try:
                 pages = load_pages_from_pdf(remove_pdf_metadata_bytes(raw))
-                prelim_pages_by_file[f.name] = len(pages)
                 total_units += len(pages)
             except Exception:
-                prelim_pages_by_file[f.name] = 1
                 total_units += 1
         else:
             total_units += 1
@@ -189,7 +208,7 @@ if process and uploads:
         elif ext == ".pdf":
             raw = file.read(); file.seek(0)
             stripped = remove_pdf_metadata_bytes(raw)
-            pages = load_pages_from_pdf(stripped, dpi=(140 if fast_mode else 200), max_px=(1600 if fast_mode else 2200))
+            pages = load_pages_from_pdf(stripped)
             for pno, pil in enumerate(pages, start=1):
                 red_pil, log = process_one_pil(pil, name, reader, progress_cb, page_tag=f"(p{pno})")
                 redacted_images_global.append(red_pil); all_logs.append(log)
@@ -240,7 +259,17 @@ if process and uploads:
             progress_cb()
 
     if redacted_images_global:
-        pdf_bytes = export_images_to_pdf(redacted_images_global).getvalue()
+        # ✅ If preview mode, now apply real redaction for export
+        if preview_mode:
+            real_redacted_images = []
+            for log, pil in zip(all_logs, redacted_images_global):
+                cv_img = pil_to_cv(pil)
+                red_pil = apply_redactions_cv(cv_img, log["redacted"], mode=redact_method)
+                real_redacted_images.append(red_pil)
+        else:
+            real_redacted_images = redacted_images_global
+
+        pdf_bytes = export_images_to_pdf(real_redacted_images).getvalue()
         ts = timestamp()
         pdf_name = f"redacted_{ts}.pdf"
         log_name = f"redaction_log_{ts}.json"
