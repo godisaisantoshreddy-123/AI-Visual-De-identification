@@ -1,34 +1,16 @@
-# Base image with Python
 FROM python:3.10-slim-bullseye
-
-# Prevents Python from buffering stdout/stderr
-ENV PYTHONUNBUFFERED=1
-
-# Install system dependencies (for OpenCV, Tesseract, etc.)
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    python3-dev \
-    libgl1 \
-    tesseract-ocr \
-    poppler-utils \
-    && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /app
 
-# Copy project files
-COPY . /app
+# Copy files
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install Python dependencies
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+COPY . .
 
-# Add Streamlit config
-RUN mkdir -p /app/.streamlit
-COPY .streamlit /app/.streamlit
+# ✅ Tell Streamlit where to find config
+ENV STREAMLIT_CONFIG_DIR=/app/.streamlit
 
-# Expose port (Streamlit default is 8501)
-EXPOSE 8501
-
-# Run Streamlit app
+# Run the app
 CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
