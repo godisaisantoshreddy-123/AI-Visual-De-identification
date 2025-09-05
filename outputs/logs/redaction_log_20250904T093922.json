@@ -1,0 +1,472 @@
+[
+  {
+    "file": "Carlos_E_Rodriguez.pdf",
+    "detections": [
+      {
+        "label": "PHONE",
+        "box": [
+          58,
+          498,
+          238,
+          28
+        ],
+        "matched": "(786) 555-9312"
+      },
+      {
+        "label": "PHONE",
+        "box": [
+          58,
+          1304,
+          528,
+          30
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "SSN",
+        "box": [
+          56,
+          604,
+          194,
+          26
+        ],
+        "matched": "312-56-7723"
+      },
+      {
+        "label": "NPI",
+        "box": [
+          58,
+          1304,
+          528,
+          30
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          58,
+          874,
+          282,
+          26
+        ],
+        "matched": "HUN199384710"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          58,
+          1304,
+          528,
+          30
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          58,
+          498,
+          238,
+          28
+        ],
+        "matched": "786"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          58,
+          498,
+          238,
+          28
+        ],
+        "matched": "555"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          58,
+          498,
+          238,
+          28
+        ],
+        "matched": "312"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          58,
+          874,
+          282,
+          26
+        ],
+        "matched": "199384710"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          58,
+          1304,
+          528,
+          30
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "ICD10",
+        "box": [
+          56,
+          1196,
+          208,
+          26
+        ],
+        "matched": "J44"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          58,
+          874,
+          282,
+          26
+        ],
+        "matched": "Member ID: HUN199384710"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          58,
+          390,
+          190,
+          28
+        ],
+        "matched": "Ethnicity\u0903 Hispanic"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          58,
+          442,
+          496,
+          28
+        ],
+        "matched": "Address\u0903 1\u096a\u096a\u0968 Palm Tree Blvd, Miami, FL \u0969\u09691\u096d6"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Carlos E Rodriguez\nDOB"
+      },
+      {
+        "label": "GPE",
+        "box": [
+          58,
+          442,
+          496,
+          28
+        ],
+        "matched": "Miami"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          56,
+          819,
+          420,
+          31
+        ],
+        "matched": "Humana Medicare Advantage"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          56,
+          819,
+          420,
+          31
+        ],
+        "matched": "PPO"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "HUN199384710\nGroup Number"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          58,
+          1304,
+          528,
+          30
+        ],
+        "matched": "Amanda Lee"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          58,
+          282,
+          210,
+          28
+        ],
+        "matched": "DO"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          58,
+          1304,
+          528,
+          30
+        ],
+        "matched": "NPI"
+      }
+    ],
+    "redacted": [
+      {
+        "label": "PHONE",
+        "box": [
+          58,
+          498,
+          238,
+          28
+        ],
+        "matched": "(786) 555-9312"
+      },
+      {
+        "label": "PHONE",
+        "box": [
+          58,
+          1304,
+          528,
+          30
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "SSN",
+        "box": [
+          56,
+          604,
+          194,
+          26
+        ],
+        "matched": "312-56-7723"
+      },
+      {
+        "label": "NPI",
+        "box": [
+          58,
+          1304,
+          528,
+          30
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          58,
+          874,
+          282,
+          26
+        ],
+        "matched": "HUN199384710"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          58,
+          1304,
+          528,
+          30
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          58,
+          498,
+          238,
+          28
+        ],
+        "matched": "786"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          58,
+          498,
+          238,
+          28
+        ],
+        "matched": "555"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          58,
+          498,
+          238,
+          28
+        ],
+        "matched": "312"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          58,
+          874,
+          282,
+          26
+        ],
+        "matched": "199384710"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          58,
+          1304,
+          528,
+          30
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "ICD10",
+        "box": [
+          56,
+          1196,
+          208,
+          26
+        ],
+        "matched": "J44"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          58,
+          874,
+          282,
+          26
+        ],
+        "matched": "Member ID: HUN199384710"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          58,
+          390,
+          190,
+          28
+        ],
+        "matched": "Ethnicity\u0903 Hispanic"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          58,
+          442,
+          496,
+          28
+        ],
+        "matched": "Address\u0903 1\u096a\u096a\u0968 Palm Tree Blvd, Miami, FL \u0969\u09691\u096d6"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Carlos E Rodriguez\nDOB"
+      },
+      {
+        "label": "GPE",
+        "box": [
+          58,
+          442,
+          496,
+          28
+        ],
+        "matched": "Miami"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          56,
+          819,
+          420,
+          31
+        ],
+        "matched": "Humana Medicare Advantage"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          56,
+          819,
+          420,
+          31
+        ],
+        "matched": "PPO"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "HUN199384710\nGroup Number"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          58,
+          1304,
+          528,
+          30
+        ],
+        "matched": "Amanda Lee"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          58,
+          282,
+          210,
+          28
+        ],
+        "matched": "DO"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          58,
+          1304,
+          528,
+          30
+        ],
+        "matched": "NPI"
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250904T093922",
+    "page": "(p1)"
+  }
+]
