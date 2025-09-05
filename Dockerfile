@@ -7,15 +7,14 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy all project files
+# Copy project files
 COPY . .
 
-# ✅ Force Streamlit to use project .streamlit directory
-ENV STREAMLIT_CONFIG_DIR=/app/.streamlit
-ENV STREAMLIT_HOME=/app
+# Make start.sh executable
+RUN chmod +x start.sh
 
 # Expose Streamlit port
 EXPOSE 8501
 
-# Run the app
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+# Run wrapper script instead of calling Streamlit directly
+CMD ["./start.sh"]
