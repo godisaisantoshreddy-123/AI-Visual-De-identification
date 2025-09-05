@@ -1,7 +1,3 @@
-[general]
-# Redirect Streamlit’s storage to /tmp (writable in Hugging Face)
-storagePath = "/tmp/.streamlit"
-
 [server]
 headless = true
 port = 8501
