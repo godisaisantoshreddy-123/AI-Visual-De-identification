@@ -1,0 +1,492 @@
+[
+  {
+    "file": "Carlos_E_Rodriguez.pdf",
+    "detections": [
+      {
+        "label": "EMAIL",
+        "box": [
+          65,
+          619,
+          472,
+          36
+        ],
+        "matched": "rodriguezG7@example.com"
+      },
+      {
+        "label": "PHONE",
+        "box": [
+          66,
+          560,
+          270,
+          32
+        ],
+        "matched": "(78\u096c) 555-9312"
+      },
+      {
+        "label": "PHONE",
+        "box": [
+          65,
+          1466,
+          594,
+          37
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "SSN",
+        "box": [
+          64,
+          680,
+          220,
+          30
+        ],
+        "matched": "312-56-7723"
+      },
+      {
+        "label": "NPI",
+        "box": [
+          65,
+          1466,
+          594,
+          37
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          65,
+          984,
+          321,
+          30
+        ],
+        "matched": "HUN99384710"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          65,
+          1466,
+          594,
+          37
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          66,
+          560,
+          270,
+          32
+        ],
+        "matched": "78\u096c"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          66,
+          560,
+          270,
+          32
+        ],
+        "matched": "555"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          66,
+          560,
+          270,
+          32
+        ],
+        "matched": "312"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          65,
+          1466,
+          594,
+          37
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "ICD10",
+        "box": [
+          63,
+          1347,
+          233,
+          31
+        ],
+        "matched": "J44.9"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          65,
+          984,
+          321,
+          30
+        ],
+        "matched": "Member ID: HUN99384710"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          61,
+          1103,
+          194,
+          40
+        ],
+        "matched": "Payer ID: 61101"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          63,
+          434,
+          220,
+          40
+        ],
+        "matched": "Ethnicity: Hispanic"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          65,
+          498,
+          105,
+          31
+        ],
+        "matched": "Address:"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          65,
+          257,
+          320,
+          36
+        ],
+        "matched": "Carlos E. Rodriguez"
+      },
+      {
+        "label": "GPE",
+        "box": [
+          175,
+          496,
+          450,
+          37
+        ],
+        "matched": "Miami"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          62,
+          922,
+          477,
+          37
+        ],
+        "matched": "Humana Medicare Advantage"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          62,
+          922,
+          477,
+          37
+        ],
+        "matched": "PPO"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "HUN99384710\nGroup Number:"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          65,
+          1466,
+          594,
+          37
+        ],
+        "matched": "Amanda Lee"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          66,
+          318,
+          236,
+          32
+        ],
+        "matched": "DO"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          65,
+          1466,
+          594,
+          37
+        ],
+        "matched": "NPI"
+      }
+    ],
+    "redacted": [
+      {
+        "label": "EMAIL",
+        "box": [
+          65,
+          619,
+          472,
+          36
+        ],
+        "matched": "rodriguezG7@example.com"
+      },
+      {
+        "label": "PHONE",
+        "box": [
+          66,
+          560,
+          270,
+          32
+        ],
+        "matched": "(78\u096c) 555-9312"
+      },
+      {
+        "label": "PHONE",
+        "box": [
+          65,
+          1466,
+          594,
+          37
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "SSN",
+        "box": [
+          64,
+          680,
+          220,
+          30
+        ],
+        "matched": "312-56-7723"
+      },
+      {
+        "label": "NPI",
+        "box": [
+          65,
+          1466,
+          594,
+          37
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          65,
+          984,
+          321,
+          30
+        ],
+        "matched": "HUN99384710"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          65,
+          1466,
+          594,
+          37
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          66,
+          560,
+          270,
+          32
+        ],
+        "matched": "78\u096c"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          66,
+          560,
+          270,
+          32
+        ],
+        "matched": "555"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          66,
+          560,
+          270,
+          32
+        ],
+        "matched": "312"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          65,
+          1466,
+          594,
+          37
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "ICD10",
+        "box": [
+          63,
+          1347,
+          233,
+          31
+        ],
+        "matched": "J44.9"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          65,
+          984,
+          321,
+          30
+        ],
+        "matched": "Member ID: HUN99384710"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          61,
+          1103,
+          194,
+          40
+        ],
+        "matched": "Payer ID: 61101"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          63,
+          434,
+          220,
+          40
+        ],
+        "matched": "Ethnicity: Hispanic"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          65,
+          498,
+          105,
+          31
+        ],
+        "matched": "Address:"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          65,
+          257,
+          320,
+          36
+        ],
+        "matched": "Carlos E. Rodriguez"
+      },
+      {
+        "label": "GPE",
+        "box": [
+          175,
+          496,
+          450,
+          37
+        ],
+        "matched": "Miami"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          62,
+          922,
+          477,
+          37
+        ],
+        "matched": "Humana Medicare Advantage"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          62,
+          922,
+          477,
+          37
+        ],
+        "matched": "PPO"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "HUN99384710\nGroup Number:"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          65,
+          1466,
+          594,
+          37
+        ],
+        "matched": "Amanda Lee"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          66,
+          318,
+          236,
+          32
+        ],
+        "matched": "DO"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          65,
+          1466,
+          594,
+          37
+        ],
+        "matched": "NPI"
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250904T094431",
+    "page": "(p1)"
+  }
+]

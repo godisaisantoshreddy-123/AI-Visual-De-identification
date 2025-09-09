@@ -1,0 +1,15 @@
+streamlit>=1.32.0
+gradio
+pandas
+numpy==1.26.4
+PyPDF2
+pytesseract
+opencv-python-headless
+pdf2image
+pillow
+pymupdf
+easyocr
+python-docx
+openpyxl
+blis==0.7.11
+spacy==3.7.5
