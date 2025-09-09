@@ -1,8 +1,10 @@
 #!/bin/bash
 
-# Upgrade pip and install dependencies
-pip install --upgrade pip
-pip install -r requirements.txt
+# Upgrade pip and build tools to make sure we use prebuilt wheels
+pip install --upgrade pip setuptools wheel
 
-# Start Streamlit app
+# Prefer binaries to avoid building from source
+pip install --prefer-binary -r requirements.txt
+
+# Start Streamlit (adjust filename if your main file is not main.py)
 streamlit run main.py --server.port $PORT --server.address 0.0.0.0
