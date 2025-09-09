@@ -11,5 +11,4 @@ pymupdf
 easyocr
 python-docx
 openpyxl
-blis==0.7.11 --only-binary=:all:
 spacy==3.7.5
