@@ -8,17 +8,8 @@ import streamlit as st
 from PIL import Image, ImageDraw, ImageFont
 
 import spacy
-import subprocess
-import sys
 
-# ---------- Ensure SpaCy model is available ----------
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    subprocess.run([sys.executable, "-m", "pip", "install", 
-                    "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0.tar.gz"])
-    import spacy
-    nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en_core_web_sm")
 
 from utils.ocr_utils import get_ocr_reader, pil_to_cv, cv_to_pil, ocr_with_boxes
 from utils.detect_utils import (
