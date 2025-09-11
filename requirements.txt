@@ -15,4 +15,4 @@ thinc==8.2.2
 blis==0.7.9
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
 typer>=0.12,<1.0
-rich==14.1.0
+rich<14
