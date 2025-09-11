@@ -8,13 +8,13 @@ import streamlit as st
 from PIL import Image, ImageDraw, ImageFont
 
 import spacy
-import subprocess
 
 # ---------- Ensure SpaCy model is available ----------
 try:
     nlp = spacy.load("en_core_web_sm")
 except OSError:
-    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+    from spacy.cli import download
+    download("en_core_web_sm")
     nlp = spacy.load("en_core_web_sm")
 
 from utils.ocr_utils import get_ocr_reader, pil_to_cv, cv_to_pil, ocr_with_boxes

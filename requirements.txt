@@ -1,5 +1,4 @@
 streamlit>=1.32.0
-gradio>=3.52.0
 pandas>=2.0.3
 numpy>=1.25.0
 PyPDF2>=3.0.1
