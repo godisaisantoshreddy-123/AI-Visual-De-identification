@@ -1,0 +1,372 @@
+[
+  {
+    "file": "Carlos_E_Rodriguez.pdf",
+    "detections": [
+      {
+        "label": "EMAIL",
+        "box": [
+          146,
+          625,
+          387,
+          24
+        ],
+        "matched": "carlos.rodriguez67@example.com"
+      },
+      {
+        "label": "PHONE",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "(786)\n555-9312"
+      },
+      {
+        "label": "PHONE",
+        "box": [
+          506,
+          1473,
+          146,
+          25
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "SSN",
+        "box": [
+          134,
+          686,
+          144,
+          19
+        ],
+        "matched": "312-56-7723"
+      },
+      {
+        "label": "NPI",
+        "box": [
+          506,
+          1473,
+          146,
+          25
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          210,
+          989,
+          169,
+          19
+        ],
+        "matched": "HUM99384710"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          252,
+          1050,
+          83,
+          19
+        ],
+        "matched": "730193"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          506,
+          1473,
+          146,
+          25
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          157,
+          564,
+          56,
+          25
+        ],
+        "matched": "786"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          223,
+          564,
+          107,
+          20
+        ],
+        "matched": "555"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          223,
+          564,
+          107,
+          20
+        ],
+        "matched": "312"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          506,
+          1473,
+          146,
+          25
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "DOB",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "DOB:\nJune\n22,\n1967"
+      },
+      {
+        "label": "ICD10",
+        "box": [
+          231,
+          1352,
+          61,
+          20
+        ],
+        "matched": "J44.9"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Member\nID:\nHUM99384710"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Payer\nID:\n61101"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          69,
+          443,
+          100,
+          24
+        ],
+        "matched": "Ethnicity:"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          67,
+          504,
+          99,
+          19
+        ],
+        "matched": "Address:"
+      }
+    ],
+    "redacted": [
+      {
+        "label": "EMAIL",
+        "box": [
+          146,
+          625,
+          387,
+          24
+        ],
+        "matched": "carlos.rodriguez67@example.com"
+      },
+      {
+        "label": "PHONE",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "(786)\n555-9312"
+      },
+      {
+        "label": "PHONE",
+        "box": [
+          506,
+          1473,
+          146,
+          25
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "SSN",
+        "box": [
+          134,
+          686,
+          144,
+          19
+        ],
+        "matched": "312-56-7723"
+      },
+      {
+        "label": "NPI",
+        "box": [
+          506,
+          1473,
+          146,
+          25
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          210,
+          989,
+          169,
+          19
+        ],
+        "matched": "HUM99384710"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          252,
+          1050,
+          83,
+          19
+        ],
+        "matched": "730193"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          506,
+          1473,
+          146,
+          25
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          157,
+          564,
+          56,
+          25
+        ],
+        "matched": "786"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          223,
+          564,
+          107,
+          20
+        ],
+        "matched": "555"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          223,
+          564,
+          107,
+          20
+        ],
+        "matched": "312"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          506,
+          1473,
+          146,
+          25
+        ],
+        "matched": "1765092039"
+      },
+      {
+        "label": "DOB",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "DOB:\nJune\n22,\n1967"
+      },
+      {
+        "label": "ICD10",
+        "box": [
+          231,
+          1352,
+          61,
+          20
+        ],
+        "matched": "J44.9"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Member\nID:\nHUM99384710"
+      },
+      {
+        "label": "INSURANCE_ID",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Payer\nID:\n61101"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          69,
+          443,
+          100,
+          24
+        ],
+        "matched": "Ethnicity:"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          67,
+          504,
+          99,
+          19
+        ],
+        "matched": "Address:"
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250910T120206",
+    "page": "(p1)"
+  }
+]

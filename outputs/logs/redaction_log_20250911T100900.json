@@ -1,0 +1,698 @@
+[
+  {
+    "file": "Driving Licence.pdf",
+    "detections": [
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          133,
+          49,
+          240,
+          20
+        ],
+        "matched": "ANDHRA"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          133,
+          49,
+          240,
+          20
+        ],
+        "matched": "PRADESH"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          67,
+          191,
+          198,
+          20
+        ],
+        "matched": "SANTOSH"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          13,
+          245,
+          348,
+          20
+        ],
+        "matched": "NARRAYANA"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          13,
+          303,
+          208,
+          20
+        ],
+        "matched": "OFFOCE"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          15,
+          321,
+          138,
+          16
+        ],
+        "matched": "GIDDALURU"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          15,
+          321,
+          138,
+          16
+        ],
+        "matched": "523357"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          125,
+          80,
+          157,
+          26
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "label": "DOB",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Date Of Birth\n23-10-2004"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          13,
+          303,
+          208,
+          20
+        ],
+        "matched": "PEDDA POST OFFOCE ROAD,"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Indian Union Driving Licence\nIssued bu ANDHRA PRADESH"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          395,
+          115,
+          30,
+          18
+        ],
+        "matched": "TIR"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          458,
+          192,
+          66,
+          6
+        ],
+        "matched": "RvuubuicoLanli"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          67,
+          191,
+          198,
+          20
+        ],
+        "matched": "REDDY"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Holder 3 Signature\nDate Of Birth"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          199,
+          227,
+          94,
+          16
+        ],
+        "matched": "Bllood Group"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          13,
+          245,
+          348,
+          20
+        ],
+        "matched": "Daughter Wife"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Bddress\u0903\n&\nPEDDA POST OFFOCE ROAD"
+      },
+      {
+        "type": "FACE",
+        "box": [
+          458,
+          85,
+          53,
+          53
+        ]
+      },
+      {
+        "type": "SIGNATURE",
+        "box": [
+          478,
+          209,
+          57,
+          14
+        ]
+      }
+    ],
+    "redacted": [
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          133,
+          49,
+          240,
+          20
+        ],
+        "matched": "ANDHRA"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          133,
+          49,
+          240,
+          20
+        ],
+        "matched": "PRADESH"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          67,
+          191,
+          198,
+          20
+        ],
+        "matched": "SANTOSH"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          13,
+          245,
+          348,
+          20
+        ],
+        "matched": "NARRAYANA"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          13,
+          303,
+          208,
+          20
+        ],
+        "matched": "OFFOCE"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          15,
+          321,
+          138,
+          16
+        ],
+        "matched": "GIDDALURU"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          15,
+          321,
+          138,
+          16
+        ],
+        "matched": "523357"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          125,
+          80,
+          157,
+          26
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "label": "DOB",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Date Of Birth\n23-10-2004"
+      },
+      {
+        "label": "ADDRESS",
+        "box": [
+          13,
+          303,
+          208,
+          20
+        ],
+        "matched": "PEDDA POST OFFOCE ROAD,"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Indian Union Driving Licence\nIssued bu ANDHRA PRADESH"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          395,
+          115,
+          30,
+          18
+        ],
+        "matched": "TIR"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          458,
+          192,
+          66,
+          6
+        ],
+        "matched": "RvuubuicoLanli"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          67,
+          191,
+          198,
+          20
+        ],
+        "matched": "REDDY"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Holder 3 Signature\nDate Of Birth"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          199,
+          227,
+          94,
+          16
+        ],
+        "matched": "Bllood Group"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          13,
+          245,
+          348,
+          20
+        ],
+        "matched": "Daughter Wife"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matched": "Bddress\u0903\n&\nPEDDA POST OFFOCE ROAD"
+      },
+      {
+        "type": "FACE",
+        "box": [
+          458,
+          85,
+          53,
+          53
+        ]
+      },
+      {
+        "type": "SIGNATURE",
+        "box": [
+          478,
+          209,
+          57,
+          14
+        ]
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250911T100817",
+    "page": "(p1)"
+  },
+  {
+    "file": "Driving Licence.pdf",
+    "detections": [
+      {
+        "label": "PHONE",
+        "box": [
+          410,
+          302,
+          50,
+          6
+        ],
+        "matched": "0741010111"
+      },
+      {
+        "label": "NPI",
+        "box": [
+          410,
+          302,
+          50,
+          6
+        ],
+        "matched": "0741010111"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          135,
+          63,
+          200,
+          21
+        ],
+        "matched": "ADPVEH"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          410,
+          302,
+          50,
+          6
+        ],
+        "matched": "0741010111"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          355,
+          333,
+          148,
+          14
+        ],
+        "matched": "OFFICE"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          355,
+          333,
+          148,
+          14
+        ],
+        "matched": "MARKAPUR"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          16,
+          17,
+          209,
+          24
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          16,
+          17,
+          209,
+          24
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          410,
+          302,
+          50,
+          6
+        ],
+        "matched": "010"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          16,
+          17,
+          209,
+          24
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          410,
+          302,
+          50,
+          6
+        ],
+        "matched": "0741010111"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          135,
+          63,
+          200,
+          21
+        ],
+        "matched": "Regn Numbers"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          299,
+          109,
+          26,
+          14
+        ],
+        "matched": "Hill"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          355,
+          333,
+          148,
+          14
+        ],
+        "matched": "UNIT OFFICE MARKAPUR"
+      }
+    ],
+    "redacted": [
+      {
+        "label": "PHONE",
+        "box": [
+          410,
+          302,
+          50,
+          6
+        ],
+        "matched": "0741010111"
+      },
+      {
+        "label": "NPI",
+        "box": [
+          410,
+          302,
+          50,
+          6
+        ],
+        "matched": "0741010111"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          135,
+          63,
+          200,
+          21
+        ],
+        "matched": "ADPVEH"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          410,
+          302,
+          50,
+          6
+        ],
+        "matched": "0741010111"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          355,
+          333,
+          148,
+          14
+        ],
+        "matched": "OFFICE"
+      },
+      {
+        "label": "DL_GENERIC",
+        "box": [
+          355,
+          333,
+          148,
+          14
+        ],
+        "matched": "MARKAPUR"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          16,
+          17,
+          209,
+          24
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          16,
+          17,
+          209,
+          24
+        ],
+        "matched": "327"
+      },
+      {
+        "label": "CVV",
+        "box": [
+          410,
+          302,
+          50,
+          6
+        ],
+        "matched": "010"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          16,
+          17,
+          209,
+          24
+        ],
+        "matched": "32720240003453"
+      },
+      {
+        "label": "BANK_ACC",
+        "box": [
+          410,
+          302,
+          50,
+          6
+        ],
+        "matched": "0741010111"
+      },
+      {
+        "label": "PERSON",
+        "box": [
+          135,
+          63,
+          200,
+          21
+        ],
+        "matched": "Regn Numbers"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          299,
+          109,
+          26,
+          14
+        ],
+        "matched": "Hill"
+      },
+      {
+        "label": "ORG",
+        "box": [
+          355,
+          333,
+          148,
+          14
+        ],
+        "matched": "UNIT OFFICE MARKAPUR"
+      }
+    ],
+    "mode": "blur",
+    "timestamp": "20250911T100900",
+    "page": "(p2)"
+  }
+]
